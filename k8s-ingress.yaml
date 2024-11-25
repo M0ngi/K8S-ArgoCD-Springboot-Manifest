@@ -3,10 +3,13 @@ kind: Ingress
 metadata:
   name: spring-ingress
   namespace: default
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
 
 spec:
+  ingressClassName: nginx
   rules:
-    - host: myapp.com
+    - host: mp.k8s.securinets.tn
       http:
         paths:
           - path: /
